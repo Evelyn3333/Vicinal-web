@@ -1,21 +1,24 @@
 .App {
-  text-align: left;
+
 }
 
 .App-logo {
+  float: left;
   animation: App-logo-spin infinite 20s linear;
   height: 60px;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
+  height: 60px;
+  padding: 1px;
+  color: rgb(131, 216, 247);
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 1.8em;
+  font-family: "Brush Script MT";
+
 }
 
 .App-intro {
