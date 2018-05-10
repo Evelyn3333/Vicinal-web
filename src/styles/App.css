@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+@import '../../node_modules/antd/dist/antd.css';
 @import "Register.css";
 .App {
 text-align: center;
@@ -20,7 +20,7 @@ text-align: center;
 .App-title {
   float: left;
   font-size: 2.0em;
-  /*font-family: "Brush Script MT";*/
+  font-family: "Brush Script MT";
   padding-top: 16px;
   color: rgb(131, 216, 247);
 }

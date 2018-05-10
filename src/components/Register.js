@@ -1,5 +1,7 @@
 import React from 'react';
-import { Form, Input, Tooltip, Icon, Checkbox, Button } from 'antd';
+import { Form, Input, Tooltip, Icon, Button, message} from 'antd';
+import $ from 'jquery';
+import { API_ROOT } from '../constants';
 
 const FormItem = Form.Item;
 
@@ -14,6 +16,20 @@ class RegistrationForm extends React.Component {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                $.ajax({
+                    url: `${API_ROOT}/signup`,
+                    method: 'POST',
+                    data: JSON.stringify({
+                        username: values.username,
+                        password: values.password,
+                    })
+                }).then((response) => {
+                    message.success(response);
+                }, (response) => {
+                    message.error(response.responseText);
+                }).catch((error) => {
+                    console.log(error);
+                });
             }
         });
     }
@@ -71,13 +87,13 @@ class RegistrationForm extends React.Component {
                     label={(
                         <span>
               Username&nbsp;
-                            <Tooltip title="What do you want others to call you?">
+                            <Tooltip title="alphanumeric only">
                 <Icon type="question-circle-o" />
               </Tooltip>
             </span>
                     )}
                 >
-                    {getFieldDecorator('nickname', {
+                    {getFieldDecorator('username', {
                         rules: [{ required: true, message: '', whitespace: true }],
                     })(
                         <Input />
@@ -111,13 +127,7 @@ class RegistrationForm extends React.Component {
                         <Input type="password" onBlur={this.handleConfirmBlur} />
                     )}
                 </FormItem>
-                <FormItem {...tailFormItemLayout}>
-                    {getFieldDecorator('agreement', {
-                        valuePropName: 'checked',
-                    })(
-                        <Checkbox>I have read the <a href="">agreement</a></Checkbox>
-                    )}
-                </FormItem>
+
                 <FormItem {...tailFormItemLayout}>
                     <Button type="primary" htmlType="submit">Register</Button>
                 </FormItem>
