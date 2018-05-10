@@ -1,6 +1,7 @@
 @import '~antd/dist/antd.css';
+@import "Register.css";
 .App {
-
+text-align: center;
 }
 
 .App-logo {
@@ -17,6 +18,7 @@
 }
 
 .App-title {
+  float: left;
   font-size: 2.0em;
   /*font-family: "Brush Script MT";*/
   padding-top: 16px;
@@ -32,8 +34,4 @@
   to { transform: rotate(360deg); }
 }
 
-.register-form {
-  margin-top: 40px;
-  width: 550px;
-}
 
