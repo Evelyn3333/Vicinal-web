@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 .App {
 
 }
@@ -12,13 +13,14 @@
   background-color: #222;
   height: 60px;
   padding: 1px;
-  color: rgb(131, 216, 247);
+
 }
 
 .App-title {
-  font-size: 1.8em;
-  font-family: "Brush Script MT";
-
+  font-size: 2.0em;
+  /*font-family: "Brush Script MT";*/
+  padding-top: 16px;
+  color: rgb(131, 216, 247);
 }
 
 .App-intro {
@@ -29,3 +31,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.register-form {
+  margin-top: 40px;
+  width: 550px;
+}
+
