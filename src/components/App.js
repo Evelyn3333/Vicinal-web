@@ -1,17 +1,25 @@
 import React from 'react';
-import { Header } from './Header.js';
+import {Header} from './Header.js';
 import '../styles/App.css';
 import {Main} from "./Main"
+import {TOKEN_KEY} from "../constants"
 
 class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <Header/>
-        <Main/>
-      </div>
-    );
-  }
+    state = {
+        isLogIn: Boolean(localStorage.getItem(TOKEN_KEY) )
+    }
+    handleLogIn = (token) => {
+        localStorage.setItem(TOKEN_KEY, token);
+        this.setState({isLogIn: true});
+    }
+    render() {
+        return (
+            <div className="App">
+                <Header/>
+                <Main isLogIn={this.state.isLogIn} handleLogIn={this.handleLogIn}/>
+            </div>
+        );
+    }
 }
 
 export default App;

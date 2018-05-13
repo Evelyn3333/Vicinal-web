@@ -1,6 +1,7 @@
 import React from 'react';
 import {API_ROOT} from "../constants";
 import $ from 'jquery';
+import {Link} from 'react-router-dom';
 import { Form, Icon, Input, Button, Checkbox, message} from 'antd';
 const FormItem = Form.Item;
 
@@ -18,7 +19,7 @@ class NormalLoginForm extends React.Component {
                         password: values.password,
                     }),
                 }).then((response) => {
-                    message.success(response);
+                    this.props.handleLogIn(response);
                 }, (response) => {
                     message.error(response.responseText);
                 }).catch((error) => {
@@ -56,7 +57,7 @@ class NormalLoginForm extends React.Component {
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
                     </Button>
-                    Or <a href="">register now!</a>
+                    <p>Or <Link to='/register'> Register Now!</Link></p>
                 </FormItem>
             </Form>
         );
