@@ -6,7 +6,13 @@ const TabPane = Tabs.TabPane;
 
 
 export class Home extends React.Component {
+    state = {
+        loadingGeoLocation: false,
+    }
     componentDidMount() {
+        this.setState({
+            loadingGeoLocation: true,
+        });
         this.getGeoLocation();
     }
 
@@ -14,7 +20,7 @@ export class Home extends React.Component {
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(
                 this.onSuccessLoadGeoLocation,
-                this.onFailLoadGeoLocation(),
+                this.onFailLoadGeoLocation,
                 GEO_OPTION,
             );
 
@@ -24,10 +30,16 @@ export class Home extends React.Component {
     }
 
     onSuccessLoadGeoLocation = (position) => {
+        this.setState ({
+            loadingGeoLocation: false,
+        });
         console.log(position);
     }
 
     onFailLoadGeoLocation = (error) => {
+        this.setState ({
+            loadingGeoLocation: false,
+        });
         console.log(error);
     }
 
