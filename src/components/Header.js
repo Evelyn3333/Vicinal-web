@@ -8,9 +8,12 @@ export class Header extends React.Component {
                 <img src={logo} className="App-logo" alt="logo" />
                 <h1 className="App-title">Around</h1>
                 {
-                    this.props.isLogIn ? <a className='logout'>
-                    <Icon type="logout" />{' '}Logout
-                </a> : null
+                    this.props.isLogIn ?
+                        <a className="logout"
+                           onClick={this.props.handleLogout}
+                        >
+                            <Icon type="logout" />{' '}Logout
+                        </a> : null
                 }
             </header>
         );

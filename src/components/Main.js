@@ -4,7 +4,6 @@ import {Login} from "./Login"
 import {Register} from "./Register"
 import {Home} from "./Home";
 
-
 export class Main extends React.Component{
     getLogin = () => {
         return this.props.isLogIn ? <Redirect to='/home'/> : <Login handleLogIn={this.props.handleLogIn}/>;
