@@ -5,3 +5,4 @@ export const GEO_OPTION = {
     maximumAge: 360000,
     timeout: 27000,
 }
+

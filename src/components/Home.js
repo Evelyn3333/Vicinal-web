@@ -1,9 +1,13 @@
 import React from 'react';
 import {GEO_OPTION} from "../constants";
+import { Tabs, Button } from 'antd';
+
+const TabPane = Tabs.TabPane;
+
 
 export class Home extends React.Component {
     componentDidMount() {
-
+        this.getGeoLocation();
     }
 
     getGeoLocation = () => {
@@ -28,9 +32,14 @@ export class Home extends React.Component {
     }
 
     render() {
+        const operations = <Button type="primary">Create New Post</Button>;
+
         return (
-            <div>
-                home page
+            <div className="tabs">
+                <Tabs tabBarExtraContent={operations}>
+                    <TabPane tab="Post" key="1">Post</TabPane>
+                    <TabPane tab="Map" key="2">Map</TabPane>
+                </Tabs>
             </div>
         )
     }
