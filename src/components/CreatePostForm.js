@@ -1,6 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, Upload, Icon } from 'antd';
-
+import { Form, Input, Upload, Icon } from 'antd';
 const FormItem = Form.Item;
 
 class CreatePostForm extends React.Component {
@@ -17,7 +16,6 @@ class CreatePostForm extends React.Component {
     }
 
     render() {
-
         const { getFieldDecorator } = this.props.form;
         const formItemLayout = {
             labelCol: { span: 6 },
@@ -25,38 +23,26 @@ class CreatePostForm extends React.Component {
         };
         return (
             <Form layout="vertical">
-                <FormItem label="Message">
+                <FormItem
+                    {...formItemLayout}
+                    label="Message">
                     {getFieldDecorator('message', {
-                        rules: [{ required: true, message: 'Please input your message.' }],
+                        rules: [{ required: true, message: 'Please input a message.' }],
                     })(
-                        <Input placeholder="What's in your mind?"/>
+                        <Input />
                     )}
                 </FormItem>
-
                 <FormItem
                     {...formItemLayout}
                     label="Image"
                 >
-                    {getFieldDecorator('upload', {
-                        rules: [{ required: true, message: "Please upload your file." }],
-                        valuePropName: 'fileList',
-                        getValueFromEvent: this.normFile,
-                    })(
-                        <Upload name="logo" action="/upload.do" listType="picture" beforeUpload={this.beforeUpload}>
-                            <Button>
-                                <Icon type="upload" /> Click to upload
-                            </Button>
-                        </Upload>
-                    )}
-                    <br/>
-
                     <div className="dropbox">
-                        {getFieldDecorator('dragger', {
-
+                        {getFieldDecorator('image', {
                             valuePropName: 'fileList',
                             getValueFromEvent: this.normFile,
+                            rules: [{ required: true, message: 'Please select an image.' }],
                         })(
-                            <Upload.Dragger name="files" action="/upload.do" beforeUpload={this.beforeUpload}>
+                            <Upload.Dragger name="files" beforeUpload={this.beforeUpload}>
                                 <p className="ant-upload-drag-icon">
                                     <Icon type="inbox" />
                                 </p>
