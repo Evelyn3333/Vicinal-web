@@ -39,7 +39,7 @@ export class CreatePostButton extends React.Component {
                     message.success('Created a post successfully!');
                     this.form.resetFields();
                     this.setState({ visible: false, confirmLoading: false });
-                    this.props.loadNearByPosts();
+                    this.props.loadNearbyPosts();
                 }, (response) => {
                     message.error(response.responseText);
                     this.setState({ visible: false, confirmLoading: false });
