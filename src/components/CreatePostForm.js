@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Input, Upload, Icon } from 'antd';
 
-
 const FormItem = Form.Item;
 
 class CreatePostForm extends React.Component {
@@ -32,7 +31,7 @@ class CreatePostForm extends React.Component {
                     {getFieldDecorator('message', {
                         rules: [{ required: true, message: 'Please input a message.' }],
                     })(
-                        <Input />
+                        <Input/>
                     )}
                 </FormItem>
                 <FormItem
@@ -47,7 +46,7 @@ class CreatePostForm extends React.Component {
                         })(
                             <Upload.Dragger name="files" beforeUpload={this.beforeUpload}>
                                 <p className="ant-upload-drag-icon">
-                                    <Icon type="inbox" />
+                                    <Icon style={{color:'rgb(238, 135, 131)'}} type="inbox" />
                                 </p>
                                 <p className="ant-upload-text">Click or drag file to this area to upload</p>
                                 <p className="ant-upload-hint">Support for a single or bulk upload.</p>

@@ -1,12 +1,11 @@
 import React from "react";
-import logo from '../assets/images/logo.svg';
 import {Icon} from 'antd';
 export class Header extends React.Component {
     render() {
         return (
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <h1 className="App-title">Vicinal</h1>
+                <Icon className="App-logo"type="star" />
+                <h1 className="App-title">Comet</h1>
                 {
                     this.props.isLogIn ?
                         <a className="logout"

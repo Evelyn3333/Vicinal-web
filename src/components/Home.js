@@ -71,9 +71,9 @@ export class Home extends React.Component {
         if (this.state.error) {
             return <div>{this.state.error}</div>;
         } else if (this.state.loadingGeoLocation) {
-            return <Spin tip="Loading geo location..."/>;
+            return <Spin style={{color:'rgb(238, 135, 131)'}} tip="Loading geo location..."/>;
         } else if (this.state.loadingPosts) {
-            return <Spin tip="Loading posts..."/>;
+            return <Spin style={{color:'rgb(238, 135, 131)'}} tip="Loading posts..."/>;
         } else if (this.state.posts && this.state.posts.length > 0) {
             const images = this.state.posts.map((post) => {
                 return {

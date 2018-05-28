@@ -4,30 +4,68 @@
 @import "Logout.css";
 @import "Home.css";
 @import "AroundMarker.css";
+@import "../index.css";
 
+a {
+  color: #eb6661;
+}
+
+.ant-btn-primary{
+  color: #fff;
+  background-color: #ff7374;
+  border-color: #ff7273;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner {
+  background-color: #eb6661;
+  border-color: #eb6661;
+}
+
+.ant-tabs-nav .ant-tabs-tab-active {
+  color: #eb6661;
+  font-weight: 500;
+}
+
+.ant-tabs-ink-bar{
+  background-color: #ff4d4f;
+}
+::selection {
+  background: #EB6662;
+  color: #fff;
+}
 .App {
 text-align: center;
 }
 
+checkbox-indeterminate .ant-checkbox-inner {
+  background-color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
 .App-logo {
+  color: ivory;
+  font-size: 45px;
+  margin-top: 5px;
+  margin-left:30px;
   float: left;
-  animation: App-logo-spin infinite 20s linear;
-  height: 60px;
+  animation: App-logo-spin infinite 5s linear;
+  height: 45px;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #df8c86;
   height: 60px;
   padding: 1px;
 
 }
 
 .App-title {
+  margin-left: 15px;
   float: left;
-  font-size: 2.0em;
+  font-size: 2.9em;
   font-family: "Arial";
-  padding-top: 16px;
-  color: rgb(131, 216, 247);
+  padding-top: 1px;
+  color: ivory;
 }
 
 .App-intro {
