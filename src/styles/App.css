@@ -4,7 +4,7 @@
 @import "Logout.css";
 @import "Home.css";
 @import "AroundMarker.css";
-@import "../index.css";
+
 
 a {
   color: #eb6661;
@@ -19,6 +19,9 @@ a {
 .ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner {
   background-color: #eb6661;
   border-color: #eb6661;
+}
+a:hover {
+  color: dimgray;
 }
 
 .ant-tabs-nav .ant-tabs-tab-active {
