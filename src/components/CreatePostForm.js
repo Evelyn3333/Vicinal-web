@@ -1,5 +1,7 @@
 import React from 'react';
 import { Form, Input, Upload, Icon } from 'antd';
+
+
 const FormItem = Form.Item;
 
 class CreatePostForm extends React.Component {
@@ -25,7 +27,8 @@ class CreatePostForm extends React.Component {
             <Form layout="vertical">
                 <FormItem
                     {...formItemLayout}
-                    label="Message">
+                    label="Message"
+                >
                     {getFieldDecorator('message', {
                         rules: [{ required: true, message: 'Please input a message.' }],
                     })(
@@ -38,9 +41,9 @@ class CreatePostForm extends React.Component {
                 >
                     <div className="dropbox">
                         {getFieldDecorator('image', {
+                            rules: [{ required: true, message: 'Please select an image.' }],
                             valuePropName: 'fileList',
                             getValueFromEvent: this.normFile,
-                            rules: [{ required: true, message: 'Please select an image.' }],
                         })(
                             <Upload.Dragger name="files" beforeUpload={this.beforeUpload}>
                                 <p className="ant-upload-drag-icon">
@@ -56,5 +59,6 @@ class CreatePostForm extends React.Component {
         );
     }
 }
+
 
 export const WrappedCreatePostForm = Form.create()(CreatePostForm);
